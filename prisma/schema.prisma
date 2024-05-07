@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model iceCream{
+  id Int @default(autoincrement()) @id
+  name String
+  size Size @relation(fields: [size_type],references: [size])
+  size_type String
+  price String
+  description String
+  images String?
+  types iceCreamType[]
+  flavors iceCreamFlavor[]
+  toppings iceCreamTopping[]
+}
+
+model Type{
+  id Int @default(autoincrement()) @id
+  types String
+  ice_cream iceCreamType[]
+}
+
+model Flavor{
+  id Int @default(autoincrement()) @id
+  flavors String
+  ice_cream iceCreamFlavor[]
+}
+
+model Topping{
+  id Int @default(autoincrement()) @id
+  toppings String
+  ice_cream iceCreamTopping[]
+}
+
+model Size{
+  id Int @default(autoincrement()) @id
+  size String @unique
+  ice_cream iceCream[]
+}
+
+model iceCreamType{
+  ice_cream_id Int
+  ice_cream iceCream @relation(fields: [ice_cream_id],references: [id])
+  type_id Int
+  type Type @relation(fields: [type_id],references: [id])
+  @@id([ice_cream_id,type_id])
+}
+
+model iceCreamFlavor{
+  ice_cream_id Int
+  ice_cream iceCream @relation(fields: [ice_cream_id],references: [id])
+  flavor_id Int
+  flavor Flavor @relation(fields: [flavor_id],references: [id])
+  @@id([ice_cream_id,flavor_id])
+}
+
+model iceCreamTopping{
+  ice_cream_id Int
+  ice_cream iceCream @relation(fields: [ice_cream_id],references: [id])
+  topping_id Int
+  topping Topping @relation(fields: [topping_id],references: [id])
+  @@id([ice_cream_id,topping_id])
+}
