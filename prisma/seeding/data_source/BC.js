@@ -55,6 +55,33 @@ const iceCreams = [
     flavorId: 5, // Assuming flavor id is 5 for Matcha Samurai
     toppingId: 6, // Assuming topping id is 6 for Chopped Nuts
   },
+  {
+    name: "Strawberry Cone",
+    size_type: "small",
+    price: "$3.99",
+    description: "Strawberry ice cream in a crispy cone.",
+    typeId: 1, // Assuming type id is 1 for Cone
+    flavorId: 3, // Assuming flavor id is 1 for Classic Vanilla
+    toppingId: 5, // Assuming topping id is 1 for Rainbow Sprinkles
+  },
+  {
+    name: "Chocolate Cone",
+    size_type: "small",
+    price: "$3.99",
+    description: "Chocolate ice cream in a crispy cone.",
+    typeId: 1, // Assuming type id is 1 for Cone
+    flavorId: 2, // Assuming flavor id is 1 for Classic Vanilla
+    toppingId: 9, // Assuming topping id is 1 for Rainbow Sprinkles
+  },
+  {
+    name: "Mint Cone",
+    size_type: "small",
+    price: "$3.99",
+    description: "Icy mint ice cream in a crispy cone.",
+    typeId: 1, // Assuming type id is 1 for Cone
+    flavorId: 4, // Assuming flavor id is 1 for Classic Vanilla
+    toppingId: 6, // Assuming topping id is 1 for Rainbow Sprinkles
+  },
 ];
 
 module.exports = iceCreams;
