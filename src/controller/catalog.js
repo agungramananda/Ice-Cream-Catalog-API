@@ -1,5 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
-const prisma = new PrismaClient();
+const prisma = require("../../prisma/prismaClient");
 const { flavorQuery, typeQuery, toppingQuery } = require("../query/query");
 
 const showCatalog = async (request, h) => {

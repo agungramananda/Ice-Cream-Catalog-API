@@ -1,7 +1,5 @@
-const { PrismaClient } = require("@prisma/client");
+const prisma = require("../prismaClient.js");
 const iceCreams = require("./data_source/BC.js");
-
-const prisma = new PrismaClient();
 
 async function seedIceCreamFlavor() {
   try {
