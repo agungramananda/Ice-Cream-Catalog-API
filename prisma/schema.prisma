@@ -17,11 +17,11 @@ model iceCream{
   id Int @default(autoincrement()) @id
   name String
   type Types @relation(fields: [type_id], references: [id])
-  type_id Int @unique
+  type_id Int
   size Sizes @relation(fields: [size_id], references: [id])
-  size_id Int @unique
+  size_id Int 
   topping Toppings? @relation(fields: [topping_id], references: [id])
-  topping_id Int? @unique
+  topping_id Int?
   flavor IceCreamFlavors[]
   price String
   description String

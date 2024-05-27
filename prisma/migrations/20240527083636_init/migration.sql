@@ -9,9 +9,6 @@ CREATE TABLE `iceCream` (
     `description` VARCHAR(191) NOT NULL,
     `images` VARCHAR(191) NULL,
 
-    UNIQUE INDEX `iceCream_type_id_key`(`type_id`),
-    UNIQUE INDEX `iceCream_size_id_key`(`size_id`),
-    UNIQUE INDEX `iceCream_topping_id_key`(`topping_id`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
