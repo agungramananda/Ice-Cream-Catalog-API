@@ -16,60 +16,48 @@ datasource db {
 model iceCream{
   id Int @default(autoincrement()) @id
   name String
-  size Size @relation(fields: [size_type],references: [size])
-  size_type String
+  type Types @relation(fields: [type_id], references: [id])
+  type_id Int @unique
+  size Sizes @relation(fields: [size_id], references: [id])
+  size_id Int @unique
+  topping Toppings? @relation(fields: [topping_id], references: [id])
+  topping_id Int? @unique
+  flavor IceCreamFlavors[]
   price String
   description String
   images String?
-  types iceCreamType[]
-  flavors iceCreamFlavor[]
-  toppings iceCreamTopping[]
 }
 
-model Type{
+model Types{
   id Int @default(autoincrement()) @id
-  types String
-  ice_cream iceCreamType[]
-}
-
-model Flavor{
-  id Int @default(autoincrement()) @id
-  flavors String
-  ice_cream iceCreamFlavor[]
-}
-
-model Topping{
-  id Int @default(autoincrement()) @id
-  toppings String
-  ice_cream iceCreamTopping[]
-}
-
-model Size{
-  id Int @default(autoincrement()) @id
-  size String @unique
+  type String
   ice_cream iceCream[]
 }
 
-model iceCreamType{
-  ice_cream_id Int
-  ice_cream iceCream @relation(fields: [ice_cream_id],references: [id])
-  type_id Int
-  type Type @relation(fields: [type_id],references: [id])
-  @@id([ice_cream_id,type_id])
+model Flavors{
+  id Int @default(autoincrement()) @id
+  flavor String
+  ice_cream IceCreamFlavors[]
 }
 
-model iceCreamFlavor{
-  ice_cream_id Int
-  ice_cream iceCream @relation(fields: [ice_cream_id],references: [id])
+model Toppings{
+  id Int @default(autoincrement()) @id
+  topping String
+  ice_cream iceCream[]
+}
+
+model Sizes{
+  id Int @default(autoincrement()) @id
+  size String
+  ice_cream iceCream[]
+}
+
+model IceCreamFlavors{
+  id Int @default(autoincrement()) @id
+  flavor Flavors @relation(fields: [flavor_id],references: [id])
   flavor_id Int
-  flavor Flavor @relation(fields: [flavor_id],references: [id])
-  @@id([ice_cream_id,flavor_id])
-}
-
-model iceCreamTopping{
-  ice_cream_id Int
   ice_cream iceCream @relation(fields: [ice_cream_id],references: [id])
-  topping_id Int
-  topping Topping @relation(fields: [topping_id],references: [id])
-  @@id([ice_cream_id,topping_id])
+  ice_cream_id Int
+
+  @@index([flavor_id, ice_cream_id])
 }

@@ -4,9 +4,7 @@ const addflavor = require("./seeding/flavor");
 const addTopping = require("./seeding/topping");
 const addType = require("./seeding/type");
 const seedIceCream = require("./seeding/iceCream");
-const seedIceCreamFlavor = require("./seeding/iceCreamFlavor");
-const seedIceCreamToppings = require("./seeding/iceCreamToppings");
-const seedIceCreamType = require("./seeding/iceCreamType");
+const seedIceCramFlavor = require("./seeding/iceCreamFlavor");
 
 const prisma = new PrismaClient();
 
@@ -16,9 +14,7 @@ async function main() {
   await addType();
   await addTopping();
   await seedIceCream();
-  await seedIceCreamFlavor();
-  await seedIceCreamToppings();
-  await seedIceCreamType();
+  await seedIceCramFlavor();
 }
 
 main()

@@ -1,86 +1,45 @@
+/*
+  size id : 
+  1 -- small
+  2 -- medium
+  3 -- large
+
+  type id :
+  1--Cone
+  2--Cup
+  3--Sandwich
+
+  topping id : 
+  1 : "Caramel Sauce" 
+  2 : "Chocolate Syrup" 
+  3 : "Whipped Cream" 
+  4 : "Chopped Nuts" 
+  5 : "Rainbow Sprinkles" 
+  6 : "Chocolate Chips"
+  7 : "Crushed Cookies" 
+  8 : "Tropical Fruit Slices" 
+  9 : "Marshmallows" 
+
+  flavor id : 
+  1 -- Vanilla
+  2 -- Chocolate
+  3 -- Mint
+  4 -- Matcha
+  5 --Strawberry
+  6 -- Blueberry
+  7 -- Mango
+  8 -- Taro
+*/
+
 const iceCreams = [
   {
     name: "Vanilla Cone",
-    size_type: "small",
+    type: "Cone",
+    size: "Small",
+    topping: "",
+    flavor: ["Vanilla"],
     price: "$3.99",
-    description: "Classic vanilla ice cream in a crispy cone.",
-    typeId: 1, // Assuming type id is 1 for Cone
-    flavorId: 1, // Assuming flavor id is 1 for Classic Vanilla
-    toppingId: 1, // Assuming topping id is 1 for Rainbow Sprinkles
-  },
-  {
-    name: "Chocolate Cup",
-    size_type: "small",
-    price: "$4.49",
-    description: "Rich chocolate ice cream in a cup.",
-    typeId: 2, // Assuming type id is 2 for Cup
-    flavorId: 2, // Assuming flavor id is 2 for Rich Chocolate
-    toppingId: 2, // Assuming topping id is 2 for Chocolate Syrup
-  },
-  {
-    name: "Strawberry Delight",
-    size_type: "medium",
-    price: "$5.99",
-    description: "Creamy strawberry ice cream with fresh strawberries.",
-    typeId: 2, // Assuming type id is 2 for Cup
-    flavorId: 3, // Assuming flavor id is 3 for Strawberry Blast
-    toppingId: 3, // Assuming topping id is 3 for Fresh Fruit Slices
-  },
-  {
-    name: "Mint Chocolate Chip Cone",
-    size_type: "large",
-    price: "$4.29",
-    description:
-      "Refreshing mint ice cream with chocolate chips in a crispy cone.",
-    typeId: 1, // Assuming type id is 1 for Cone
-    flavorId: 4, // Assuming flavor id is 4 for Icy Mint
-    toppingId: 4, // Assuming topping id is 4 for Chocolate Chips
-  },
-  {
-    name: "Chocolate and Cream Shake",
-    size_type: "medium",
-    price: "$5.49",
-    description:
-      "Creamy cookies and cream ice cream blended into a delicious shake.",
-    typeId: 3, // Assuming type id is 3 for Shake
-    flavorId: 2, // Assuming flavor id is 2 for Rich Chocolate
-    toppingId: 5, // Assuming topping id is 5 for Whipped Cream
-  },
-  {
-    name: "Samurai Sundae",
-    size_type: "small",
-    price: "$6.79",
-    description: "Matcha ice cream served with chopped nuts.",
-    typeId: 4, // Assuming type id is 4 for Sundae
-    flavorId: 5, // Assuming flavor id is 5 for Matcha Samurai
-    toppingId: 6, // Assuming topping id is 6 for Chopped Nuts
-  },
-  {
-    name: "Strawberry Cone",
-    size_type: "small",
-    price: "$3.99",
-    description: "Strawberry ice cream in a crispy cone.",
-    typeId: 1, // Assuming type id is 1 for Cone
-    flavorId: 3, // Assuming flavor id is 1 for Classic Vanilla
-    toppingId: 5, // Assuming topping id is 1 for Rainbow Sprinkles
-  },
-  {
-    name: "Chocolate Cone",
-    size_type: "small",
-    price: "$3.99",
-    description: "Chocolate ice cream in a crispy cone.",
-    typeId: 1, // Assuming type id is 1 for Cone
-    flavorId: 2, // Assuming flavor id is 1 for Classic Vanilla
-    toppingId: 9, // Assuming topping id is 1 for Rainbow Sprinkles
-  },
-  {
-    name: "Mint Cone",
-    size_type: "small",
-    price: "$3.99",
-    description: "Icy mint ice cream in a crispy cone.",
-    typeId: 1, // Assuming type id is 1 for Cone
-    flavorId: 4, // Assuming flavor id is 1 for Classic Vanilla
-    toppingId: 6, // Assuming topping id is 1 for Rainbow Sprinkles
+    description: "Vanilla ice cream in a crispy cone.",
   },
 ];
 

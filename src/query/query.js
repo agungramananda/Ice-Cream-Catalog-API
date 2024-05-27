@@ -1,9 +1,9 @@
 const flavorQuery = (requestedFlavor) => {
   return {
-    flavors: {
+    flavor: {
       some: {
         flavor: {
-          flavors: requestedFlavor,
+          flavor: requestedFlavor,
         },
       },
     },
@@ -12,25 +12,13 @@ const flavorQuery = (requestedFlavor) => {
 
 const typeQuery = (requestedType) => {
   return {
-    types: {
-      some: {
-        type: {
-          types: requestedType,
-        },
-      },
-    },
+    type: { type: requestedType },
   };
 };
 
 const toppingQuery = (requestedTopping) => {
   return {
-    toppings: {
-      some: {
-        topping: {
-          toppings: requestedTopping,
-        },
-      },
-    },
+    topping: { topping: requestedTopping },
   };
 };
 

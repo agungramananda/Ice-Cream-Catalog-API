@@ -2,13 +2,16 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 async function addflavor() {
-  await prisma.flavor.createMany({
+  await prisma.flavors.createMany({
     data: [
-      { flavors: "Classic Vanilla" },
-      { flavors: "Rich Chocolate" },
-      { flavors: "Strawberry Blast" },
-      { flavors: "Icy Mint" },
-      { flavors: "Matcha Samurai" },
+      { flavor: "Vanilla" },
+      { flavor: "Chocolate" },
+      { flavor: "Mint" },
+      { flavor: "Matcha" },
+      { flavor: "Strawberry" },
+      { flavor: "Blueberry" },
+      { flavor: "Mango" },
+      { flavor: "Taro" },
     ],
   });
 }

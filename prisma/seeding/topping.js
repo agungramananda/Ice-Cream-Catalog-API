@@ -2,17 +2,17 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 async function addTopping() {
-  await prisma.topping.createMany({
+  await prisma.toppings.createMany({
     data: [
-      { toppings: "Caramel Sauce" },
-      { toppings: "Chocolate Syrup" },
-      { toppings: "Whipped Cream" },
-      { toppings: "Chopped Nuts" },
-      { toppings: "Rainbow Sprinkles" },
-      { toppings: "Chocolate Chips" },
-      { toppings: "Crushed Cookies" },
-      { toppings: "Tropical Fruit Slices" },
-      { toppings: "Marshmallows" },
+      { topping: "Caramel Sauce" },
+      { topping: "Chocolate Syrup" },
+      { topping: "Whipped Cream" },
+      { topping: "Chopped Nuts" },
+      { topping: "Rainbow Sprinkles" },
+      { topping: "Chocolate Chips" },
+      { topping: "Crushed Cookies" },
+      { topping: "Tropical Fruit Slices" },
+      { topping: "Marshmallows" },
     ],
   });
 }
