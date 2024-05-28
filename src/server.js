@@ -15,6 +15,13 @@ const init = async () => {
   server.route([
     {
       method: "GET",
+      path: "/",
+      handler: (request, h) => {
+        return "Welcome to the API";
+      },
+    },
+    {
+      method: "GET",
       path: "/catalog",
       handler: showCatalog,
     },
